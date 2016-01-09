@@ -47,7 +47,7 @@ class HDMISwitcher(object):
 
     def cmd_resolution(self, resolution):
         assert resolution >= 0
-        assert port <= 4
+        assert resolution <= 4
         cmd = bytearray([0xa5, 0x5b, 0x08, 0x06, resolution, 0x00,
                          0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
         self.serial.write(self.add_checksum(cmd))
